@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no, email=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>春暖花开踏青季</title>
+    <!--分享加入-->
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+<body>
+<div>
+    <img class="header" src="../img/app/header.jpg"/>
+    <div class="act1">
+        <div class="text-img text1">
+            <img src="../img/app/text1.png"/>
+        </div>
+        <div class="packet-box">
+            <div class="packet-name">
+                开春红包
+            </div>
+            <div class="packet-num">
+                <span>388</span>元
+            </div>
+            <div class="packet-btn">
+                <div class="common-btn change-btn receive-btn">
+                    <div>立即领取</div>
+                </div>
+            </div>
+        </div>
+        <img class="flower1" src="../img/app/flower1.png"/>
+    </div>
+    <div class="green-bg">
+        <div class="act2">
+            <div class="text-img text2">
+                <img src="../img/app/text2.png"/>
+            </div>
+            <div class="get-times-box">
+                <div class="get-times-item">
+                    <div>
+                        <div class="text-box">
+                            累计投资每满<span>2000元</span>即可获得<span>1次</span>抽奖机会（智能盈、转让标除外）
+                        </div>
+                        <div class="common-btn change-btn get-times-btn buy-btn">
+                            <div>立即投资</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="get-times-item">
+                    <div>
+                        <div class="text-box">
+                            邀请<span>1位</span>好友完成首笔投资(金额≥500元)可获得一次转盘机会
+                        </div>
+                        <div class="common-btn change-btn get-times-btn" id="invite">
+                            <div>去邀请好友</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rotary-box">
+                <img class="go" src="../img/app/go.png"/>
+                <div class="rotary">
+                    <!--默认加载图片2防止空白-->
+                    <img style="display: none" src="../img/app/rota2.png"/>
+                </div>
+                <div class="rotary-times">
+                    剩余抽奖机会：<span>0</span>次
+                </div>
+                <div class="common-btn change-btn rotary-btn">
+                    <div>查看我的奖品</div>
+                </div>
+            </div>
+        </div>
+        <div class="act3">
+            <div class="vip-box">
+                <div>
+                    <div class="text-box">
+                        <div>我的累积年化投资：<span id="annual"></span>我的等级：<span id="vip"></span></div>
+                        <br/>
+                        <div id="next">（距离下一个等级还差<span></span>的年化投资）</div>
+                    </div>
+                    <div class="hint">
+                        VIP等级越高，获得大奖的概率越高哦~
+                    </div>
+                    <div class="common-btn change-btn vip-btn ">
+                        <img src="../img/app/share.png">
+                        <div id="share">分享加抽奖机会</div>
+                    </div>
+                    <img class="vip-img-text" src="../img/app/text3.png"/>
+                </div>
+            </div>
+        </div>
+        <div class="act4">
+            <div class="text-img text4">
+                <img src="../img/app/text4.png"/>
+            </div>
+            <div class="prize-box">
+                <div class="prize-list">
+                    <div class="swiper-box"></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <a href="tel:400-800-8808"><div class="phone">
+                <img src="../img/app/phone.png">
+                客服电话：400-800-8808
+            </div></a>
+            <div class="hint">
+                市场有风险，投资需谨慎
+            </div>
+            <div class="rule">
+                掌指理财拥有本活动的最终解释权
+            </div>
+            <img class="flower2" src="../img/app/flower2.png"/>
+        </div>
+    </div>
+    <img class="act-rule" src="../img/app/rule.png">
+    <div class="act-mask">
+        <div>
+            <div class="popup-box">
+                <div class="popup-title"></div>
+                <div class="rule-box">
+                    <ul>
+                        <li>
+                            <div>1.</div>
+                            <div>活动期间，VIP0、VIP1、VIP2掌粉，分享朋友圈可免费领取1次转盘机会，VIP3及VIP4掌粉分享朋友圈可免费领取2次转盘机会；</div>
+                        </li>
+                        <li>
+                            <div>2.</div>
+                            <div>活动期间，累计投资每满<span>2000元</span>即可获得<span>1次</span>抽奖机会（智能盈、转让标除外）例：活动期间总投资金额10万，就有50次转盘机会，越转越多金；
+                            </div>
+                        </li>
+                        <li>
+                            <div>3.</div>
+                            <div>活动期间邀请<span>1位</span>好友完成首笔投资<span>（金额≥500元）</span>可获得<span>1次</span>转盘机会；</div>
+                        </li>
+                        <li>
+                            <div>4.</div>
+                            <div>抽奖机会仅限活动期间使用，逾期无效；实物奖品将于活动结束后5个工作日内寄出，期间请保持手机通畅；</div>
+                        </li>
+                        <li>
+                            <div>5.</div>
+                            <div>如有疑问，敬请咨询掌指理财客服热线4008008808（8:30-20:00）；</div>
+                        </li>
+                        <li>
+                            <div>6.</div>
+                            <div>如遇到某个商品缺货，掌指理财有权换成同等价位的中奖商品寄出，图片仅供参考。</div>
+                        </li>
+                    </ul>
+                    <div class="gradient"></div>
+                </div>
+                <div class="prompt-box"></div>
+                <div class="popop-prize-box">
+                    <div class="prize-list">
+                        <div></div>
+                    </div>
+                    <div class="form-box">
+                        <div>
+                            <div class="tip">姓名：</div>
+                            <input type="text" class="form-input" placeholder="请输入姓名" id="name">
+                        </div>
+                        <div>
+                            <div class="tip">手机号码：</div>
+                            <input type="number" class="form-input" placeholder="请输入手机号" id="phone">
+                        </div>
+                        <div>
+                            <div class="tip">收货地址：</div>
+                            <input type="text" class="form-input" placeholder="请输入您的收货地址" id="address">
+                        </div>
+                    </div>
+                </div>
+                <div id="updata" class="btn-box">
+                    <div>
+                        <div class="common-btn updata-btn">
+                            <div>修改地址</div>
+                        </div>
+                        <div class="common-btn close-btn">
+                            <div>朕知道了</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="tip" class="btn-box">
+                    <div>
+                        <div class="common-btn close-btn">
+                            <div>朕知道了</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="no-times" class="btn-box">
+                    <div>
+                        <div class="common-btn buy-btn">
+                            <div>立即投资</div>
+                        </div>
+                        <div class="common-btn close-btn">
+                            <div>朕知道了</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
