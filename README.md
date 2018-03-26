@@ -3,9 +3,9 @@
 ##文件默认目录格式
 
 >src
->>css
->>img
->>js
->>static
->>view
+>>css<br>   
+>>img<br>
+>>js<br>
+>>static<br>
+>>view<br>
 
