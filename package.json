@@ -39,11 +39,5 @@
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.7.1",
     "webpack-merge": "^4.1.0"
-  },
-  "dependencies": {
-    "axios": "^0.17.0",
-    "echo-js": "^1.7.3",
-    "fastclick": "^1.0.6",
-    "lazyload": "^2.0.0-beta.2"
   }
 }
