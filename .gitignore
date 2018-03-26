@@ -4,3 +4,9 @@
 /yarn.lock
 /package-lock.json
 /dist
+src/css/index.styl
+src/css/index.styl
+src/img/.gitkeep
+src/js/index.js
+src/static/.gitkeep
+src/view/index.html
