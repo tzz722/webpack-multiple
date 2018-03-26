@@ -28,35 +28,42 @@ function getIPAdress () {
 let HTMLDirs = getFileNameList('./src/view');
 let host = getIPAdress()
 //修改需要注意 文件里引用静态文件的地址
-let commonPath = ''
+let commonPath = checkAddSlash('files')
 //修改html文件存放的位置 文件夹名
-let htmlPath = 'view'
+let htmlPath = checkAddSlash('views')
 //想对路径 由html的层级决定
 let buildPublicPath = (htmlPath) ? '../' : './'
 module.exports = {
   HTMLDirs: HTMLDirs,
   //css内地址
-  cssPublicPath: '../' + commonPath,
-  //图片输出路径
+  cssPublicPath: `../${commonPath}`,
+  //生成html文件路径
   buildPublicPath: buildPublicPath,
+  //js输出路径
+  jsOutputPath: `${commonPath}js/`,
   //图片输出路径
-  imgOutputPath: commonPath + 'img/',
+  imgOutputPath: `${commonPath}img/`,
   //字体输出路径
-  fontOutputPath: commonPath + 'font/',
+  fontOutputPath: `${commonPath}font/`,
   //媒体文件输出路径
-  mediaOutputPath: commonPath + 'media/',
+  mediaOutputPath: `${commonPath}media/`,
   //html输出路径
-  htmlOutputPath: htmlPath + '/',
+  htmlOutputPath: `${htmlPath}`,
   //资源文件的格式
   fileFormat: '[name].[hash:7].[ext]',
   //文件转base64的大小限制
   fileLimit: 10000,
   //独立样式输出
-  cssOutputPath: commonPath + "css/[name]-[contenthash].css",
+  cssOutputPath: `${commonPath}css/[name]-[contenthash].css`,
   //导出独立文件地址
-  staticOutputPath: "./",
+  staticOutputPath: `./${commonPath}static`,
   //本地运行根目录
-  devServerOutputPath: '../dist/' + htmlPath,
+  devServerOutputPath: `../dist/${htmlPath}`,
   host: host,
   port: '8862'
 }
+
+function checkAddSlash (path) {
+  return (path) ? `${path}/` : path
+}
+

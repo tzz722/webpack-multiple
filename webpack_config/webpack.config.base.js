@@ -33,9 +33,9 @@ config.HTMLDirs.forEach((page) => {
 module.exports = {
   entry: Entries,
   output: {
-    filename: "js/[name].bundle.[chunkhash].js",
+    filename: `${config.jsOutputPath}[name].bundle.[chunkhash].js`,
     path: path.resolve(__dirname, "../dist"),
-    chunkFilename: "js/[id].chunk.[chunkhash].js"
+    chunkFilename: `${config.jsOutputPath}[id].chunk.[chunkhash].js`
   },
   resolve: {
     //支持无后缀名
@@ -55,7 +55,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        exclude: /node_modules/,
+        exclude: [/node_modules/, path.resolve(__dirname, '../static')],
         // 抽取 css 文件到单独的文件夹
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
@@ -78,7 +78,7 @@ module.exports = {
       },
       {
         test: /\.styl(us)?$/,
-        exclude: /node_modules/,
+        exclude: [/node_modules/, path.resolve(__dirname, '../static')],
         // 抽取 css 文件到单独的文件夹
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
@@ -102,6 +102,7 @@ module.exports = {
       },
       {
         test: /\.html$/,
+        exclude: [/node_modules/, path.resolve(__dirname, '../static')],
         use: [{
           loader: 'html-loader',
           options: {
@@ -113,7 +114,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        exclude: [/node_modules/, path.resolve(__dirname, '../static')],
         use: {
           loader: 'babel-loader',
           options: {
@@ -124,6 +125,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        exclude: [/node_modules/, path.resolve(__dirname, '../static')],
         use: [
           {
             loader: 'url-loader',
@@ -137,6 +139,7 @@ module.exports = {
       },
       {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+        exclude: [/node_modules/, path.resolve(__dirname, '../static')],
         loader: 'url-loader',
         options: {
           limit: config.fileLimit,
@@ -146,6 +149,7 @@ module.exports = {
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        exclude: [/node_modules/, path.resolve(__dirname, '../static')],
         loader: 'url-loader',
         options: {
           limit: config.fileLimit,
