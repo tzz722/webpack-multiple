@@ -6,6 +6,6 @@
 >> css<br>
 >> img<br>
 >> js<br>
->> static<br>
->> view<br>
+>> static 静态文件(不打包)<br>
+>> view 页面<br>
 
