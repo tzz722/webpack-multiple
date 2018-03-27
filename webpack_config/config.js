@@ -25,10 +25,10 @@ function getIPAdress() {
   }
 }
 
-let HTMLDirs = getFileNameList('./src/view');
+let HTMLDirs = getFileNameList('./src/assets/view');
 let host = getIPAdress();
 // 修改需要注意 文件里引用静态文件的地址
-let commonPath = checkAddSlash('');
+let commonPath = checkAddSlash('static');
 // 修改html文件存放的位置 文件夹名
 let htmlPath = checkAddSlash('');
 // 想对路径 由html的层级决定
@@ -56,7 +56,7 @@ module.exports = {
   // 独立样式输出
   cssOutputPath: `${commonPath}css/[name]-[contenthash].css`,
   // 导出独立文件地址
-  staticOutputPath: `./${commonPath}static`,
+  // staticOutputPath: `./static`,
   // 本地运行根目录
   devServerOutputPath: `../dist/${htmlPath}`,
   host: host,

@@ -7,7 +7,7 @@ const webpackMerge = require("webpack-merge");
 const webpack = require("webpack");
 const config = require("./config");
 //拷贝静态文件
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+// const CopyWebpackPlugin = require('copy-webpack-plugin')
 //gzip
 const CompressionPlugin = require("compression-webpack-plugin");
 // 清理 dist 文件夹
@@ -50,13 +50,13 @@ module.exports = webpackMerge(webpackBase, {
       name: "manifest",
       minChunks: Infinity
     }),
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, '../src/static'),
-        to: config.staticOutputPath,
-        ignore: ['.*']
-      }
-    ]),
+    // new CopyWebpackPlugin([
+    //   {
+    //     from: path.resolve(__dirname, '../src/static'),
+    //     to: config.staticOutputPath,
+    //     ignore: ['.*']
+    //   }
+    // ]),
     // 自动清理 dist 文件夹
     new CleanWebpackPlugin(['*'], {
       root: path.resolve(__dirname, '../dist'),

@@ -17,12 +17,12 @@ config.HTMLDirs.forEach((page) => {
     filename: `${config.htmlOutputPath}${page}.html`,
     inject: 'head',
     hash: false,
-    template: path.resolve(__dirname, `../src/view/${page}.html`),
+    template: path.resolve(__dirname, `../src/assets/view/${page}.html`),
     chunks: ['manifest', 'vendor', 'commons', page],
     chunksSortMode: 'manual',
   });
   HTMLPlugins.push(htmlPlugin);
-  Entries[page] = path.resolve(__dirname, `../src/js/${page}.js`);
+  Entries[page] = path.resolve(__dirname, `../src/assets/js/${page}.js`);
 })
 
 //已分离成静态文件
@@ -43,11 +43,9 @@ module.exports = {
     //常用依赖
     alias: {
       '@': path.resolve(__dirname, '../src'),
-      'js': path.resolve(__dirname, '../src/js'),
-      'img': path.resolve(__dirname, '../src/img'),
-      'css': path.resolve(__dirname, '../src/css'),
-      'static': path.resolve(__dirname, '../src/static'),  //静态文件地址
-      'jquery': path.resolve(__dirname, '../src/js/commonJS/jquery.min.js')
+      'assets': path.resolve(__dirname, '../src/assets'),
+      'static': path.resolve(__dirname, '../src/static'),  // 静态文件地址
+      'jquery': path.resolve(__dirname, '../src/static/js/jquery.min.js')
     }
   },
   // 加载器
@@ -55,7 +53,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        exclude: [/node_modules/, path.resolve(__dirname, '../static')],
+        exclude: /node_modules/,
         // 抽取 css 文件到单独的文件夹
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
@@ -78,7 +76,7 @@ module.exports = {
       },
       {
         test: /\.styl(us)?$/,
-        exclude: [/node_modules/, path.resolve(__dirname, '../static')],
+        exclude: /node_modules/,
         // 抽取 css 文件到单独的文件夹
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
@@ -102,7 +100,7 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        exclude: [/node_modules/, path.resolve(__dirname, '../static')],
+        exclude: /node_modules/,
         use: [{
           loader: 'html-loader',
           options: {
@@ -114,7 +112,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        exclude: [/node_modules/, path.resolve(__dirname, '../static')],
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {
@@ -125,7 +123,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        exclude: [/node_modules/, path.resolve(__dirname, '../static')],
+        exclude: /node_modules/,
         use: [
           {
             loader: 'url-loader',
@@ -139,7 +137,7 @@ module.exports = {
       },
       {
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
-        exclude: [/node_modules/, path.resolve(__dirname, '../static')],
+        exclude: /node_modules/,
         loader: 'url-loader',
         options: {
           limit: config.fileLimit,
@@ -149,7 +147,7 @@ module.exports = {
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-        exclude: [/node_modules/, path.resolve(__dirname, '../static')],
+        exclude: /node_modules/,
         loader: 'url-loader',
         options: {
           limit: config.fileLimit,
