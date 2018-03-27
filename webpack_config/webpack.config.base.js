@@ -166,6 +166,7 @@ module.exports = {
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery'
-    })
+    }),
+    new webpack.EnvironmentPlugin('NODE_ENV'),
   ]
 }

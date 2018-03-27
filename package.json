@@ -4,9 +4,9 @@
   "description": "multiple page es6",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=dev && webpack-dev-server --config ./webpack_config/webpack.config.dev.js --open",
-    "build": "cross-env NODE_ENV=prod && webpack --config ./webpack_config/webpack.config.prod.js -p",
-    "lint": "cross-env NODE_ENV=lint && webpack-dev-server --config ./webpack_config/webpack.config.lint.js --open",
+    "dev": "cross-env NODE_ENV=dev webpack-dev-server --config ./webpack_config/webpack.config.dev.js --open",
+    "build": "cross-env NODE_ENV=prod webpack --config ./webpack_config/webpack.config.prod.js -p",
+    "lint": "cross-env NODE_ENV=lint webpack-dev-server --config ./webpack_config/webpack.config.lint.js --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
