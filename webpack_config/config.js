@@ -29,7 +29,7 @@ function getIPAdress() {
 let HTMLDirs = getFileNameList('./src/assets/view');
 let host = getIPAdress();
 // 修改需要注意 文件里引用静态文件的地址
-let commonPath = checkAddSlash('');
+let commonPath = checkAddSlash('static');
 // 修改html文件存放的位置 文件夹名
 let htmlPath = checkAddSlash('');
 // 想对路径 由html的层级决定
