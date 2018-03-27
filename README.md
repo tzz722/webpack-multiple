@@ -26,7 +26,7 @@
     ├── logger-service.js                   // 启动日志配置
     ├── .editorconfig                       // webstorm代码格式配置文件
     ├── .eslintrc                           // eslint配置
-    ├── .gitignore		                      // git文件上传设置
+    ├── .gitignore		                // git文件上传设置
     ├── package.json                        // 依赖包
     ├── postcss.config.js                   // postcss的设置
     └── Readme.md                           // 就是这个文档
