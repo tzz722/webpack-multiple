@@ -33,6 +33,6 @@
 
 
 ## 运行
-* npm run dev    // derserver
+* npm run dev    // devServer
 * npm run build  // 打包
 * npm run lint   // 代码检查&&derserver
