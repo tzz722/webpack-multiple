@@ -1,18 +1,18 @@
 # webpack(3.X) 打包多页面
 
 ## 目录结构描述
-    ├── src                                // 配置
-    │   ├── assets                         // 项目使用文件
+    ├── src                                 // 配置
+    │   ├── assets                          // 项目使用文件
     │   │   ├── css
     │   │   ├── img
     │   │   ├── js
-    │   │   ├── view                       // 页面
-    │   │   │   └── XXXX                   // 页面名称(关联生成页面以及js名称)
-    │   │   │       ├── index.html         // 页面文件
-    │   │   │       ├── main.html          // 入口文件
-    │   │   │       └── index.stylus       // 样式
+    │   │   ├── view                        // 页面
+    │   │   │   └── XXXX                    // 页面名称(关联生成页面以及js名称)
+    │   │   │       ├── index.html          // 页面文件
+    │   │   │       ├── main.html           // 入口文件
+    │   │   │       └── index.stylus        // 样式
     │   │   └──...
-    │   └── static                         // 不常改动文件
+    │   └── static                          // 不常改动文件
     │       ├── css
     │       ├── img
     │       ├── js
