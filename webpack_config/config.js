@@ -4,9 +4,10 @@ const getFileNameList = (path) => {
   let fileList = [];
   let dirList = fs.readdirSync(path);
   dirList.forEach((item) => {
-    if (item.indexOf('html') > -1) {
-      fileList.push(item.split('.')[0]);
-    }
+    // if (item.indexOf('html') > -1) {
+    //   fileList.push(item.split('.')[0]);
+    // }
+    fileList.push(item.split('.')[0]);
   });
   return fileList;
 };
@@ -28,15 +29,16 @@ function getIPAdress() {
 let HTMLDirs = getFileNameList('./src/assets/view');
 let host = getIPAdress();
 // 修改需要注意 文件里引用静态文件的地址
-let commonPath = checkAddSlash('static');
+let commonPath = checkAddSlash('');
 // 修改html文件存放的位置 文件夹名
 let htmlPath = checkAddSlash('');
 // 想对路径 由html的层级决定
 let buildPublicPath = (htmlPath) ? '../' : './';
+let cssPublicPath = (commonPath) ? '../../' : '../';
 module.exports = {
   HTMLDirs: HTMLDirs,
   // css内地址
-  cssPublicPath: `../${commonPath}`,
+  cssPublicPath: cssPublicPath,
   // 生成html文件路径
   buildPublicPath: buildPublicPath,
   // js输出路径

@@ -17,12 +17,12 @@ config.HTMLDirs.forEach((page) => {
     filename: `${config.htmlOutputPath}${page}.html`,
     inject: 'head',
     hash: false,
-    template: path.resolve(__dirname, `../src/assets/view/${page}.html`),
+    template: path.resolve(__dirname, `../src/assets/view/${page}/index.html`),
     chunks: ['manifest', 'vendor', 'commons', page],
     chunksSortMode: 'manual',
   });
   HTMLPlugins.push(htmlPlugin);
-  Entries[page] = path.resolve(__dirname, `../src/assets/js/${page}.js`);
+  Entries[page] = path.resolve(__dirname, `../src/assets/view/${page}/main.js`);
 })
 
 //已分离成静态文件
