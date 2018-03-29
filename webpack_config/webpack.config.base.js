@@ -45,7 +45,7 @@ module.exports = {
       '@': path.resolve(__dirname, '../src'),
       'assets': path.resolve(__dirname, '../src/assets'),
       'static': path.resolve(__dirname, '../src/static'),  // 静态文件地址
-      'jquery': path.resolve(__dirname, '../src/static/js/jquery.min.js')
+      // 'jquery': path.resolve(__dirname, '../src/static/js/jquery.min.js')
     }
   },
   // 加载器
@@ -163,10 +163,10 @@ module.exports = {
     // 自动生成 HTML 插件
     ...HTMLPlugins,
     //自动加载插件
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery'
-    }),
+    // new webpack.ProvidePlugin({
+    //   $: 'jquery',
+    //   jQuery: 'jquery'
+    // }),
     new webpack.EnvironmentPlugin('NODE_ENV'),
   ]
 }
