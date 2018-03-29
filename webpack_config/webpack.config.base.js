@@ -54,7 +54,7 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: /node_modules/,
-        // 抽取 css 文件到单独的文件夹 
+        // 抽取 css 文件到单独的文件夹
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
           publicPath: config.cssPublicPath,
