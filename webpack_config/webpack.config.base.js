@@ -48,7 +48,7 @@ module.exports = {
       'jquery': path.resolve(__dirname, '../src/static/js/jquery.min.js')
     }
   },
-  // 加载器
+  // 加载器2
   module: {
     rules: [
       {
