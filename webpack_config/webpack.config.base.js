@@ -13,16 +13,20 @@ let HTMLPlugins = [];
 let Entries = {}
 // 生成多页面的集合
 config.HTMLDirs.forEach((page) => {
-  const htmlPlugin = new HTMLWebpackPlugin({
-    filename: `${config.htmlOutputPath}${page}.html`,
-    inject: 'head',
-    hash: false,
-    template: path.resolve(__dirname, `../src/assets/view/${page}/index.html`),
-    chunks: ['manifest', 'vendor', 'commons', page],
-    chunksSortMode: 'manual',
-  });
-  HTMLPlugins.push(htmlPlugin);
-  Entries[page] = path.resolve(__dirname, `../src/assets/view/${page}/main.js`);
+  config.unPack.forEach((item)=>{
+    if(page != item){
+      const htmlPlugin = new HTMLWebpackPlugin({
+        filename: `${config.htmlOutputPath}${page}.html`,
+        inject: 'head',
+        hash: false,
+        template: path.resolve(__dirname, `../src/assets/view/${page}/index.html`),
+        chunks: ['manifest', 'vendor', 'commons', page],
+        chunksSortMode: 'manual',
+      });
+      HTMLPlugins.push(htmlPlugin);
+      Entries[page] = path.resolve(__dirname, `../src/assets/view/${page}/main.js`);
+    }
+  })
 })
 
 //已分离成静态文件

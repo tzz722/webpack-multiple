@@ -35,6 +35,7 @@ let htmlPath = checkAddSlash('');
 // 想对路径 由html的层级决定
 let buildPublicPath = (htmlPath) ? '../' : './';
 let cssPublicPath = (commonPath) ? '../../' : '../';
+let unPack = ['dome']
 module.exports = {
   HTMLDirs: HTMLDirs,
   // css内地址
@@ -63,6 +64,8 @@ module.exports = {
   devServerOutputPath: `../dist/${htmlPath}`,
   host: host,
   port: '8862',
+  //不打包页面
+  unPack: unPack,
 };
 
 function checkAddSlash(path) {
