@@ -13,7 +13,7 @@ const getFileNameList = (path) => {
 };
 
 // 获取到本地的ip
-function getIPAdress() {
+function getIPAdress () {
   let interfaces = require('os').networkInterfaces();
   for (let devName in interfaces) {
     let iface = interfaces[devName];
@@ -68,7 +68,7 @@ module.exports = {
   unPack: unPack,
 };
 
-function checkAddSlash(path) {
+function checkAddSlash (path) {
   return (path) ? `${path}/` : path;
 }
 
