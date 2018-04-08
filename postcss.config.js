@@ -7,8 +7,8 @@ module.exports = {
       // 是否去掉不必要的前缀 默认：true
       remove: true,
     },
-    'cssnano': ({
-      preset: 'default',
-    }),
+    // 'cssnano': ({
+    //   preset: 'default',
+    // }),
   },
 };
