@@ -98,7 +98,12 @@ module.exports = {
                 sourceMap: true
               }
             },
-            'stylus-loader'
+            {
+              loader: "stylus-loader",
+              options: {
+                import: [path.resolve(__dirname, '../src/assets/css/config')]
+              }
+            },
           ]
         })
       },
