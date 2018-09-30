@@ -1,0 +1,49 @@
+fontColor = #666666
+mainFontColor = #333333
+backgroundColor = #F5F5F5
+mainBlue = #6798FF
+themeColor = #FFA700
+mainBorder = #9c9c9c
+btnPadding = 120px
+
+html, body
+	height 100%
+
+*
+	box-sizing border-box
+	font-size 28px
+
+body
+	font-family "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif!important
+
+.app-Warp
+	background-color backgroundColor
+	position relative
+	height 100%
+	width 100%
+	overflow-x hidden
+	overflow-y scroll
+	-webkit-overflow-scrolling touch
+
+.vc-switch
+	opacity 0.5
+
+
+// theme
+@import '~mand-mobile/components/_style/global'
+@import '~mand-mobile/components/_style/mixin/util'
+@import '~mand-mobile/components/_style/mixin/theme'
+
+// 覆盖样式变量
+color-primary = #FFA700
+color-primary-tap = #6798FF
+color-border-minor = #9c9c9c
+button-primary-height = 100px
+
+.md-button
+	border-radius 10px
+
+.md-picker-column-item
+	.column-list
+		font-size 0
+
