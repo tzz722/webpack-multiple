@@ -23,7 +23,7 @@ module.exports = {
 	fileLimit: 10000, // 文件转base64的大小限制
 	cssOutputPath: `${commonPath}css/`, // 独立样式输出
 	devServerOutputPath: `../dist/${htmlPath}`, // 本地运行根目录
-	port: '23333'
+	port: '2333'
 }
 
 function getFileNameList(path, unPack, onlyPack) {
